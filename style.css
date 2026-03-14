@@ -460,7 +460,7 @@ a:hover {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 92%;
+  height: 80%;
   z-index: 6;
   display: flex;
   align-items: flex-end;
@@ -475,35 +475,17 @@ a:hover {
 }
 
 .hero-portrait {
-  height: 100%;
-  max-height: 780px;
-  width: auto;
+  height: 90%;
+  max-height: 650px;
   object-fit: contain;
-  object-position: top center;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 0 60px rgba(94, 234, 212, 0.2));
+  -webkit-mask-image: radial-gradient(ellipse 48% 48% at 50% 50%, black 75%, transparent 100%);
+  mask-image: radial-gradient(ellipse 48% 48% at 50% 50%, black 75%, transparent 100%);
+  filter: drop-shadow(0 0 40px rgba(107, 33, 168, 0.6));
   opacity: 0;
   animation: portraitReveal 1.5s forwards;
   animation-delay: 1.8s;
-}
-
-@media screen and (max-width: 768px) {
-  .hero-portrait {
-    max-height: 580px;
-  }
-  .hero-visual {
-    height: 85%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-portrait {
-    max-height: 460px;
-  }
-  .hero-visual {
-    height: 80%;
-  }
 }
 
 @keyframes portraitReveal {
@@ -513,16 +495,16 @@ a:hover {
 
 .character-rim {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
+  min-width: 400px;
   z-index: 1;
-  background-color: #22d3ee;
-  box-shadow: inset 66px 35px 85px 0px rgba(0, 180, 180, 0.65);
-  filter: blur(50px);
+  background: radial-gradient(ellipse at center, #3b0764 0%, #1e1b4b 60%, transparent 80%);
+  filter: blur(40px);
   border-radius: 50%;
-  top: 60%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, 0%) scale(1.4);
+  transform: translate(-50%, -50%) scale(1.3);
   opacity: 0;
   animation: backlight 3s forwards;
   animation-delay: 2.3s;
